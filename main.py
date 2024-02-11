@@ -43,8 +43,11 @@ comms_data = {
 }
 
 drivetrain_data = {
-    "speed": 30,
-    "direction": "North"
+    "direction": "North",
+    "gps": "37.7749, -122.4194",
+    "imu": "0, 0, 0",
+    "reference": "0, 0, 0",
+    "speed": 10
 }
 
 # Endpoint to serve power data

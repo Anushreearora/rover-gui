@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Drivetrain = ({ data }) => {
+const Drivetrain = ({ direction,gps,imu,reference,speed }) => {
     return (
       <table className="table table-striped table-bordered">
         <thead>
@@ -12,6 +12,16 @@ const Drivetrain = ({ data }) => {
             <th scope="col" class="col-1" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>Speed</th>
           </tr>
         </thead>
+        <tbody>
+        <tr>
+          <td>{direction}</td>
+          <td>{gps}</td>
+          <td>{imu}</td>
+          <td>{reference}</td>
+          <td>{speed}</td>
+
+        </tr>
+      </tbody>
       </table>
     );
   };
