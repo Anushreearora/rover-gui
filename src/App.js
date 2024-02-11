@@ -4,7 +4,8 @@ import './App.css';
 import Power from './components/Power';
 import Comms from './components/Comms';
 import Drivetrain from './components/Drivetrain';
-import Cam from './components/Cam';
+import Cam1 from './components/Cam1';
+import Cam2 from './components/Cam2';
 
 const App = () => {
   const [powerData, setPowerData] = useState({});
@@ -43,7 +44,7 @@ const App = () => {
   return (
     <div className="container mt-4">
       
-      <h1 className="text-center">Team Rexus GUI</h1>
+      <h1 className="text-center">Rexus Telemetry</h1>
 
       <div className="row">
         <div className="col-md-6">
@@ -64,8 +65,8 @@ const App = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <Cam cameraNumber={1}/> 
-          <Cam cameraNumber={2}/> 
+          <Cam1/> 
+          <Cam2/> 
         </div>
       </div>
     </div>
