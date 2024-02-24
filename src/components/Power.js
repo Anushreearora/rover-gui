@@ -26,8 +26,8 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{currentLoad}</td>
-          <td>{capacity}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{currentLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{capacity}</td>
         </tr>
       </tbody>
       </table>
@@ -46,10 +46,10 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{motorData.frLoad}</td>
-          <td>{motorData.flLoad}</td>
-          <td>{motorData.brLoad}</td>
-          <td>{motorData.blLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{motorData.frLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{motorData.flLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{motorData.brLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{motorData.blLoad}</td>
         </tr>
       </tbody>
       </table>
@@ -68,12 +68,12 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{jointData.j0Load}</td>
-          <td>{jointData.j1Load}</td>
-          <td>{jointData.j2Load}</td>
-          <td>{jointData.j3Load}</td>
-          <td>{jointData.j4Load}</td>
-          <td>{jointData.eeLoad}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.j0Load}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.j1Load}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.j2Load}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.j3Load}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.j4Load}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{jointData.eeLoad}</td>
         </tr>
       </tbody>
       </table>
@@ -91,11 +91,11 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{labLoadData.x}</td>
-          <td>{labLoadData.y}</td>
-          <td>{labLoadData.z}</td>
-          <td>{labLoadData.tray}</td>
-          <td>{labLoadData.gripper}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{labLoadData.x}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{labLoadData.y}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{labLoadData.z}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{labLoadData.tray}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{labLoadData.gripper}</td>
         </tr>
       </tbody>
       </table>

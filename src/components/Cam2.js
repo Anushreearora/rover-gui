@@ -21,7 +21,7 @@ const Cam2 = () => {
         <div>
         <div className="row">
           <div className="col-md-6" style={{ position: 'relative' }}>
-            <select style={{ fontSize: '20px', color: '#1C2833', position: 'absolute', top: 0, left: '12px', zIndex: 1 }} name="camera" id="camera" onChange={handleCameraChange}>
+            <select style={{ fontSize: '16px', color: '#A9DFBF', position: 'absolute', top: 0, left: "12px", zIndex: 1, backgroundColor:'#1C2833', borderRadius: '7px', padding: '3px', fontWeight: 'bold' }} name="camera" id="camera" onChange={handleCameraChange}>
               <option value="drivetrain">Drivetrain Cam</option>
               <option value="comms">Comms Cam</option>
               <option value="power">RA Cam</option>

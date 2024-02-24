@@ -61,11 +61,6 @@ const App = () => {
       
   }, []);
 
-  //add fetch for comms data
-
-
-
-
   return (
     <div className="container mt-4">
       
@@ -92,7 +87,9 @@ const App = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <Cam1/> 
+          <div style={{ marginTop: '35px' }}>
+            <Cam1/> 
+          </div>
           <br/>
           <Cam2/> 
         </div>

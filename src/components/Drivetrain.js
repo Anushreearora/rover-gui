@@ -14,11 +14,11 @@ const Drivetrain = ({ direction,gps,imu,reference,speed }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{direction}</td>
-          <td>{gps}</td>
-          <td>{imu}</td>
-          <td>{reference}</td>
-          <td>{speed}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{direction}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{gps}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{imu}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{reference}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{speed}</td>
 
         </tr>
       </tbody>

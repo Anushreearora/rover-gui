@@ -11,8 +11,8 @@ const Comms = ({ status,speed }) => {
         </thead>
         <tbody>
         <tr>
-          <td>{status}</td>
-          <td>{speed}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{status}</td>
+          <td style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>{speed}</td>
         </tr>
       </tbody>
       </table>
