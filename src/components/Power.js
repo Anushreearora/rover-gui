@@ -1,8 +1,20 @@
 import React from 'react';
 
 const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
+    const [showMore, setShowMore] = React.useState(false);
+
+    const toggleMenu = () => {
+      setShowMore(!showMore);
+    };
+
     return (
-      <div>
+      <div> 
+
+      Power 
+      <div onClick={toggleMenu} style={{ cursor: 'pointer', color: '#A9DFBF', transition: 'transform 0.3s' }}>
+        <span style={{ transform: showMore ? 'rotateZ(90deg)' : 'rotateZ(0)' }}>&#10148;</span>
+      </div>
+
       <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
@@ -17,6 +29,8 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </tr>
       </tbody>
       </table>
+
+      <div style={{ overflow: 'hidden', transition: 'max-height 0.3s', maxHeight: showMore ? '1000px' : '0' }}>
 
       <table className="table table-striped table-bordered table-hover">
         <thead>
@@ -80,8 +94,11 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
         </tr>
       </tbody>
       </table>
-      
+
       </div>
+
+      </div>
+
     );
   };
   
