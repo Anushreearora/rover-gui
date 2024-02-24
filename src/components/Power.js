@@ -10,9 +10,11 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
     return (
       <div> 
 
-      Power 
-      <div onClick={toggleMenu} style={{ cursor: 'pointer', color: '#A9DFBF', transition: 'transform 0.3s' }}>
-        <span style={{ transform: showMore ? 'rotateZ(90deg)' : 'rotateZ(0)' }}>&#10148;</span>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h3>Power</h3>
+        <div onClick={toggleMenu} style={{ cursor: 'pointer' , color: '#A9DFBF', transition: 'transform 0.3s' }}>
+          <span style={{ transform: showMore ? 'rotateZ(90deg)' : 'rotateZ(0)', marginLeft: '0.5rem' }}>&#10148;</span>
+        </div>
       </div>
 
       <table className="table table-striped table-bordered table-hover">
@@ -30,8 +32,9 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
       </tbody>
       </table>
 
-      <div style={{ overflow: 'hidden', transition: 'max-height 0.3s', maxHeight: showMore ? '1000px' : '0' }}>
+      <div style={{ overflow: 'hidden', transition: 'max-height 0.5s', maxHeight: showMore ? '1000px' : '0' }}>
 
+      Wheels
       <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
@@ -51,6 +54,7 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
       </tbody>
       </table>
 
+      Actuators
       <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
@@ -74,6 +78,7 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
       </tbody>
       </table>
 
+      Lab
       <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
