@@ -79,12 +79,14 @@ const App = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col"> Comms
+            <div className="col"> 
+              <h4>Comms</h4>
               <Comms status={commsData.status} speed={commsData.speed}/>
             </div>
           </div>
           <div className="row">
-            <div className="col"> Drivetrain
+            <div className="col"> 
+              <h4>Drivetrain</h4>
               <Drivetrain direction={drivetrainData.direction} gps={drivetrainData.gps} imu={drivetrainData.imu} reference={drivetrainData.reference} speed={drivetrainData.reference}/>
             </div>
           </div>
