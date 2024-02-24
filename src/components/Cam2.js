@@ -19,16 +19,19 @@ const Cam2 = () => {
 
     return (
         <div>
-          <div className="row">
-            <div className="col-md-6">
-              <select style={{fontSize:'20px'}} name="camera" id="camera" onChange={handleCameraChange}>
-                <option value="comms">Comms Cam</option>
-                <option value="drivetrain">Drivetrain Cam</option>
-              </select>
-              <img src={link} alt="Camera 1" />
-            </div>
+        <div className="row">
+          <div className="col-md-6" style={{ position: 'relative' }}>
+            <select style={{ fontSize: '20px', color: '#1C2833', position: 'absolute', top: 0, left: '12px', zIndex: 1 }} name="camera" id="camera" onChange={handleCameraChange}>
+              <option value="drivetrain">Drivetrain Cam</option>
+              <option value="comms">Comms Cam</option>
+              <option value="power">RA Cam</option>
+              <option value="power">Lab Cam</option>
+              <option value="power">Depth Cam</option>
+            </select>
+            <img src={link} alt="Camera 2" style={{ zIndex: 0 }} />
           </div>
         </div>
+      </div>
       );
 };
 

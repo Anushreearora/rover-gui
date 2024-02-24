@@ -39,7 +39,7 @@ power_data = {
 
 comms_data = {
     "status": "Connected",
-    "speed": "High"
+    "speed": "10 Mbps",
 }
 
 drivetrain_data = {
@@ -50,20 +50,50 @@ drivetrain_data = {
     "speed": 10
 }
 
-# Endpoint to serve power data
+motor_load_data = {
+    "frLoad": 50,
+    "flLoad": 50,
+    "brLoad": 50,
+    "blLoad": 50
+}
+
+joint_load_data = {
+    "j0Load": 50,
+    "j1Load": 50,
+    "j2Load": 50,
+    "j3Load": 50,
+    "j4Load": 50,
+    "eeLoad": 50
+}
+
+lab_load_data = {
+    "x" : 0,
+    "y" : 0,
+    "z" : 0,
+    "em_trays" : 0,
+    "em_grippers" : 0,
+}
+
+
 @app.route('/power_data')
 def get_power_data():
     return jsonify(power_data)
 
-# Endpoint to serve comms data
 @app.route('/comms_data')
 def get_comms_data():
     return jsonify(comms_data)
 
-# Endpoint to serve drivetrain data
 @app.route('/drivetrain_data')
 def get_drivetrain_data():
     return jsonify(drivetrain_data)
+
+@app.route('/motor_data')
+def get_motor_data():
+    return jsonify(motor_data)
+
+@app.route('/joint_data')
+def get_joint_data():
+    return jsonify(joint_data)
 
 @app.route('/image_feed1')
 def image_feed1():
