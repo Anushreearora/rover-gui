@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Power = ({ currentLoad,capacity,motorData,jointData }) => {
+const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
     return (
       <div>
       <table className="table table-striped table-bordered table-hover">
@@ -56,6 +56,27 @@ const Power = ({ currentLoad,capacity,motorData,jointData }) => {
           <td>{jointData.j3Load}</td>
           <td>{jointData.j4Load}</td>
           <td>{jointData.eeLoad}</td>
+        </tr>
+      </tbody>
+      </table>
+
+      <table className="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="col-2.4" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>x</th>
+            <th scope="col" class="col-2.4" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>y</th>
+            <th scope="col" class="col-2.4" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>z</th>
+            <th scope="col" class="col-2.4" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>EM-Tray</th>
+            <th scope="col" class="col-2.4" style={{ backgroundColor: '#1C2833', color: '#A9DFBF' }}>EM-Gripper</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{labLoadData.x}</td>
+          <td>{labLoadData.y}</td>
+          <td>{labLoadData.z}</td>
+          <td>{labLoadData.tray}</td>
+          <td>{labLoadData.gripper}</td>
         </tr>
       </tbody>
       </table>

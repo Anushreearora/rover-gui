@@ -70,8 +70,8 @@ lab_load_data = {
     "x" : 0,
     "y" : 0,
     "z" : 0,
-    "em_trays" : 0,
-    "em_grippers" : 0,
+    "tray" : 0,
+    "gripper" : 0,
 }
 
 
@@ -89,11 +89,15 @@ def get_drivetrain_data():
 
 @app.route('/motor_data')
 def get_motor_data():
-    return jsonify(motor_data)
+    return jsonify(motor_load_data)
 
 @app.route('/joint_data')
 def get_joint_data():
-    return jsonify(joint_data)
+    return jsonify(joint_load_data)
+
+@app.route('/lab_data')
+def get_lab_data():
+    return jsonify(lab_load_data)
 
 @app.route('/image_feed1')
 def image_feed1():

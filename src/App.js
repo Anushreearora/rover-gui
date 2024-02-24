@@ -13,6 +13,7 @@ const App = () => {
   const [drivetrainData, setDrivetrainData] = useState({});
   const [motorData, setMotorData] = useState({});
   const [jointData, setJointData] = useState({});
+  const [labLoadData, setLabLoadData] = useState({});
 
   useEffect(() => {
     fetch('http://127.0.0.1:5000/power_data')
@@ -50,6 +51,14 @@ const App = () => {
         setJointData(data)
       })
       .catch(error => console.error('Error fetching data:', error));
+    fetch('http://127.0.0.1:5000/lab_data')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Lab Load Data:', data);
+        setLabLoadData(data)
+      })
+      .catch(error => console.error('Error fetching data:', error));
+      
   }, []);
 
   //add fetch for comms data
@@ -66,7 +75,7 @@ const App = () => {
         <div className="col-md-6">
           <div className="row">
             <div className="col"> Power
-              <Power currentLoad={powerData.currentLoad} capacity={powerData.capacity} motorData={motorData} jointData={jointData}/>
+              <Power currentLoad={powerData.currentLoad} capacity={powerData.capacity} motorData={motorData} jointData={jointData} labLoadData={labLoadData}/>
             </div>
           </div>
           <div className="row">
