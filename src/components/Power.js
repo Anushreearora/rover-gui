@@ -11,7 +11,7 @@ const Power = ({ currentLoad,capacity,motorData,jointData,labLoadData }) => {
       <div> 
 
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <h4>Power</h4>
+        <h5>Power</h5>
         <div onClick={toggleMenu} style={{ cursor: 'pointer' , color: '#A9DFBF', transition: 'transform 0.3s' }}>
           <span style={{ transform: showMore ? 'rotateZ(90deg)' : 'rotateZ(0)', marginLeft: '0.5rem' }}>&#10148;</span>
         </div>

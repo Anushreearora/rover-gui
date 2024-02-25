@@ -64,8 +64,10 @@ const App = () => {
   return (
     <div className="container mt-4">
       
-      <h1 className="text-center">Rexus Telemetry</h1>
-
+      <hr/>
+      <h2 className="text-center">Rexus Telemetry</h2>
+      <hr/>
+      
       <div className="row">
         <div className="col-md-6">
           <div className="row">
@@ -75,13 +77,13 @@ const App = () => {
           </div>
           <div className="row">
             <div className="col"> 
-              <h4>Comms</h4>
+              <h5>Comms</h5>
               <Comms status={commsData.status} speed={commsData.speed}/>
             </div>
           </div>
           <div className="row">
             <div className="col"> 
-              <h4>Drivetrain</h4>
+              <h5>Drivetrain</h5>
               <Drivetrain direction={drivetrainData.direction} gps={drivetrainData.gps} imu={drivetrainData.imu} reference={drivetrainData.reference} speed={drivetrainData.reference}/>
             </div>
           </div>
