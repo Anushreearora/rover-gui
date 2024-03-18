@@ -6,6 +6,7 @@ import Comms from './components/Comms';
 import Drivetrain from './components/Drivetrain';
 import Cam1 from './components/Cam1';
 import Cam2 from './components/Cam2';
+import VideoFeed from './components/VideoFeed';
 
 const App = () => {
   const [powerData, setPowerData] = useState({});
@@ -72,19 +73,19 @@ const App = () => {
         <div className="col-md-6">
           <div className="row">
             <div className="col">
-              <Power currentLoad={powerData.currentLoad} capacity={powerData.capacity} motorData={motorData} jointData={jointData} labLoadData={labLoadData}/>
+              <Power/>
             </div>
           </div>
           <div className="row">
             <div className="col"> 
               <h5>Comms</h5>
-              <Comms status={commsData.status} speed={commsData.speed}/>
+              <Comms/>
             </div>
           </div>
           <div className="row">
             <div className="col"> 
               <h5>Drivetrain</h5>
-              <Drivetrain direction={drivetrainData.direction} gps={drivetrainData.gps} imu={drivetrainData.imu} reference={drivetrainData.reference} speed={drivetrainData.reference}/>
+              <Drivetrain />
             </div>
           </div>
         </div>

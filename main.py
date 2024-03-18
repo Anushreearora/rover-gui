@@ -2,35 +2,13 @@ import cv2
 from flask import Flask, Response, jsonify
 from flask_cors import CORS
 import numpy as np
+import random
+import time
 
 app = Flask(__name__)
 CORS(app)
-camera1 = cv2.VideoCapture(0)
-camera2 = cv2.VideoCapture(1)
 
-def resize_frame(frame, width=None, height=None):
-    if width is None and height is None:
-        return frame
-    if width is None:
-        r = height / frame.shape[0]
-        dim = (int(frame.shape[1] * r), height)
-    else:
-        r = width / frame.shape[1]
-        dim = (width, int(frame.shape[0] * r))
-    resized_frame = cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
-    return resized_frame
 
-def gen_frames(camera):
-    while True:
-        success, frame = camera.read()
-        if not success:
-            break
-        else:
-            resized_frame = resize_frame(frame, width=640)  # Resize frame to desired width (e.g., 640 pixels)
-            ret, buffer = cv2.imencode('.jpg', resized_frame)
-            frame_bytes = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
             
 power_data = {
     "currentLoad": 50,
@@ -51,27 +29,27 @@ drivetrain_data = {
 }
 
 motor_load_data = {
-    "frLoad": 50,
-    "flLoad": 50,
-    "brLoad": 50,
-    "blLoad": 50
+    "frLoad": 12.5,
+    "flLoad": 12.7,
+    "brLoad": 12.6,
+    "blLoad": 12.5
 }
 
 joint_load_data = {
-    "j0Load": 50,
-    "j1Load": 50,
-    "j2Load": 50,
-    "j3Load": 50,
-    "j4Load": 50,
-    "eeLoad": 50
+    "j0Load": 2,
+    "j1Load": 1.5,
+    "j2Load": 1.2,
+    "j3Load": 1.3,
+    "j4Load": 3,
+    "eeLoad": 6
 }
 
 lab_load_data = {
-    "x" : 0,
-    "y" : 0,
-    "z" : 0,
-    "tray" : 0,
-    "gripper" : 0,
+    "x" : 2.2,
+    "y" : 1.8,
+    "z" : 2.0,
+    "tray" : 4.3,
+    "gripper" : 1,
 }
 
 
@@ -101,11 +79,31 @@ def get_lab_data():
 
 @app.route('/image_feed1')
 def image_feed1():
-    return Response(gen_frames(camera1), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # Open the video file
+    video_path = 'vid.mov'
+    video = cv2.VideoCapture(video_path)
+
+    def generate_frames():
+        while True:
+            success, frame = video.read()
+            if not success:
+                break
+            # Encoding the frame in JPEG format
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+    return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+'''
 
 @app.route('/image_feed2')
 def image_feed2():
     return Response(gen_frames(camera2), mimetype='multipart/x-mixed-replace; boundary=frame')
+'''
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+SyntaxWarning
